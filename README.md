@@ -24,6 +24,11 @@ The templates found in the Templates directory :
 How to use
 ==========
 
+     apt-get install git-core
+     git clone https://github.com/pevma/Suricata-Logstash-Templates
+
+That will create a directory - Suricata-Logstash-Templates - holding the templates.
+
  - Open your Kibana web interface
  - Right upper corner, Load -> Advanced -> Browse
  - Load the desired template(s)
