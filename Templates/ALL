@@ -20,7 +20,7 @@
           "pin": false,
           "type": "lucene",
           "enable": true,
-          "query": "event_type:\"file\""
+          "query": "event_type:\"fileinfo\""
         },
         "2": {
           "id": 2,
@@ -724,7 +724,7 @@
           "editable": true,
           "type": "terms",
           "loadingEditor": false,
-          "field": "file.magic.raw",
+          "field": "fileinfo.magic.raw",
           "exclude": [
             ""
           ],
@@ -1036,7 +1036,7 @@
         "event_type:\"http\"",
         "event_type:\"dns\"",
         "event_type:\"tls\"",
-        "event_type:\"file\"",
+        "event_type:\"fileinfo\"",
         "event_type:\"alert\"",
         "http*",
         "*",
