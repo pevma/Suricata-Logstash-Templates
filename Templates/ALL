@@ -724,7 +724,7 @@
           "editable": true,
           "type": "terms",
           "loadingEditor": false,
-          "field": "file.magic.raw",
+          "field": "fileinfo.magic.raw",
           "exclude": [
             ""
           ],
