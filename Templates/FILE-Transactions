@@ -7,7 +7,7 @@
         "0": {
           "id": 0,
           "color": "#7EB26D",
-          "query": "event_type:\"file\"",
+          "query": "event_type:\"fileinfo\"",
           "alias": "ALL Files",
           "pin": false,
           "type": "lucene",
