@@ -15,8 +15,10 @@ The templates found in the Templates directory :
 - DNS  
 - FILE Transactions  
 - HTTP  
+- HTTP-Extended-Custom
 - SSH  
 - TLS
+
 
 
 
@@ -32,5 +34,9 @@ That will create a directory - Suricata-Logstash-Templates - holding the templat
  - Open your Kibana web interface
  - Right upper corner, Load -> Advanced -> Browse
  - Load the desired template(s)
+
+NOTE:
+In order to use the HTTP-Extended-Custom template you need to set up Suricata as
+explained here - http://www.pevma.blogspot.se/2014/06/http-header-fields-extended-logging.html
 
 Do not hesitate to contribute !
