@@ -7,16 +7,17 @@ Templates for Kibana/Logstash to use with Suricata IDPS
 This repository provides 9 templates for the Kibana interface of Logstash
 for use with Suricata IDS/IPS - Intrusion Detection and Prevention System.
 
-These templates are for use with Suricata and ELK - Elasticsearch, Logstash, Kibana
-You can install all of them following the guide here:
+These templates are for use with Suricata and ELK - Elasticsearch, Logstash, 
+Kibana. You can install all of them following the guide here:
 
 https://redmine.openinfosecfoundation.org/projects/suricata/wiki/_Logstash_Kibana_and_Suricata_JSON_output  
 
 or you can just try them out ready to use with SELKS:
+
 https://www.stamus-networks.com/open-source/
 
 
-The templates found in the Templates directory :
+The templates found in the Templates directory:
 
 - ALL  
 - ALERTS 
