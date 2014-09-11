@@ -15,7 +15,7 @@
         "1": {
           "id": 1,
           "color": "#EAB839",
-          "alias": "Established flow",
+          "alias": "Established flows",
           "pin": false,
           "type": "lucene",
           "enable": true,
@@ -215,7 +215,7 @@
           "tmode": "terms",
           "tstat": "total",
           "valuefield": "",
-          "title": "Flow Source Port"
+          "title": "Flow Source Ports"
         },
         {
           "error": false,
