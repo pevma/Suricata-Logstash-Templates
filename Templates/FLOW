@@ -4,8 +4,8 @@
     "query": {
       "list": {
         "0": {
-          "query": "event_type:\"flow\" and flow.pkts_toserver",
-          "alias": "Pkts to Server",
+          "query": "event_type:\"flow\" AND flow.state:\"new\"",
+          "alias": "New flows",
           "color": "#7EB26D",
           "id": 0,
           "pin": false,
@@ -15,36 +15,26 @@
         "1": {
           "id": 1,
           "color": "#EAB839",
-          "alias": "Pkts to Client",
+          "alias": "Established flow",
           "pin": false,
           "type": "lucene",
           "enable": true,
-          "query": "event_type:\"flow\" and flow.pkts_toclient"
+          "query": "event_type:\"flow\" AND flow.state:\"established\""
         },
         "2": {
           "id": 2,
-          "color": "#6ED0E0",
-          "alias": "Bytes to Server",
-          "pin": false,
-          "type": "lucene",
-          "enable": true,
-          "query": "event_type:\"flow\" and flow.bytes_toserver"
-        },
-        "3": {
-          "id": 3,
           "color": "#890F02",
-          "alias": "Bytes to Client",
+          "alias": "Closed flows",
           "pin": false,
           "type": "lucene",
           "enable": true,
-          "query": "event_type:\"flow\" and flow.bytes_toclient"
+          "query": "event_type:\"flow\" AND flow.state:\"closed\""
         }
       },
       "ids": [
         0,
         1,
-        2,
-        3
+        2
       ]
     },
     "filter": {
@@ -94,8 +84,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "annotate": {
@@ -108,9 +97,9 @@
               "desc"
             ]
           },
-          "auto_int": false,
+          "auto_int": true,
           "resolution": 100,
-          "interval": "5m",
+          "interval": "30m",
           "intervals": [
             "auto",
             "1s",
@@ -130,7 +119,7 @@
           "linewidth": 3,
           "points": false,
           "pointradius": 5,
-          "bars": true,
+          "bars": false,
           "stack": true,
           "spyable": true,
           "zoomlinks": true,
@@ -185,8 +174,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -221,8 +209,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -257,8 +244,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -293,8 +279,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -315,8 +300,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "field": "flow.age",
@@ -367,8 +351,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -403,8 +386,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -439,8 +421,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -475,8 +456,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -511,8 +491,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -547,8 +526,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -583,8 +561,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms",
@@ -619,8 +596,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms_stats",
@@ -655,8 +631,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms_stats",
@@ -691,8 +666,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms_stats",
@@ -727,8 +701,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "tmode": "terms_stats",
@@ -765,7 +738,18 @@
             "font-size": "9pt"
           },
           "overflow": "min-height",
-          "fields": [],
+          "fields": [
+            "@timestamp",
+            "src_ip",
+            "src_port",
+            "dest_ip",
+            "dest_port",
+            "flow.app_proto",
+            "flow.start",
+            "flow.end",
+            "flow.age",
+            "flow_id"
+          ],
           "highlight": [],
           "sortable": true,
           "header": true,
@@ -776,8 +760,7 @@
             "ids": [
               0,
               1,
-              2,
-              3
+              2
             ]
           },
           "field_list": true,
@@ -820,26 +803,29 @@
   "pulldowns": [
     {
       "type": "query",
-      "collapse": false,
+      "collapse": true,
       "notice": false,
       "query": "*",
       "pinned": true,
       "history": [
+        "event_type:\"flow\" AND flow.state:\"closed\"",
+        "event_type:\"flow\" AND flow.state:\"established\"",
+        "event_type:\"flow\" AND flow.state:\"new\"",
+        "event_type:\"flow\" and flow.state:\"closed\"",
+        "event_type:\"flow\" and flow.state:\"established\"",
+        "event_type:\"flow\" and flow.state:\"new\"",
         "event_type:\"flow\" and flow.bytes_toclient",
         "event_type:\"flow\" and flow.bytes_toserver",
         "event_type:\"flow\" and flow.pkts_toclient",
-        "event_type:\"flow\" and flow.pkts_toserver",
-        "event_type:\"flow\" and not flow.pkts_toserver",
-        "event_type:\"flow\"",
-        "flow.pkts_toserver"
+        "event_type:\"flow\" and flow.pkts_toserver"
       ],
       "remember": 10,
       "enable": true
     },
     {
       "type": "filtering",
-      "collapse": false,
-      "notice": true,
+      "collapse": true,
+      "notice": false,
       "enable": true
     }
   ],
