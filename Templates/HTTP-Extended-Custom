@@ -75,9 +75,9 @@
               "desc"
             ]
           },
-          "auto_int": false,
+          "auto_int": true,
           "resolution": 100,
-          "interval": "5m",
+          "interval": "1h",
           "intervals": [
             "auto",
             "1s",
@@ -759,7 +759,17 @@
             "font-size": "9pt"
           },
           "overflow": "min-height",
-          "fields": [],
+          "fields": [
+            "@timestamp",
+            "src_ip",
+            "dest_ip",
+            "dest_port",
+            "http.hostname",
+            "http.content_type",
+            "http.url",
+            "http.status",
+            "http.http_user_agent"
+          ],
           "highlight": [],
           "sortable": true,
           "header": true,
@@ -811,7 +821,7 @@
   "pulldowns": [
     {
       "type": "query",
-      "collapse": false,
+      "collapse": true,
       "notice": false,
       "query": "*",
       "pinned": true,
@@ -823,8 +833,8 @@
     },
     {
       "type": "filtering",
-      "collapse": false,
-      "notice": true,
+      "collapse": true,
+      "notice": false,
       "enable": true
     }
   ],
