@@ -486,7 +486,7 @@
     "default": "NO_TIME_FILTER_OR_INDEX_PATTERN_NOT_MATCHED",
     "warm_fields": true
   },
-  "style": "light",
+  "style": "dark",
   "failover": false,
   "loader": {
     "save_gist": false,
