@@ -1,0 +1,1082 @@
+{
+  "title": "Privacy",
+  "services": {
+    "query": {
+      "list": {
+        "0": {
+          "query": "event_type:\"http\"",
+          "alias": "HTTP",
+          "color": "#7EB26D",
+          "id": 0,
+          "pin": true,
+          "type": "lucene",
+          "enable": true
+        },
+        "1": {
+          "id": 1,
+          "color": "#EAB839",
+          "alias": "Facebook",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "http.hostname:*.facebook.net"
+        },
+        "2": {
+          "id": 2,
+          "color": "#AEA2E0",
+          "alias": "Google Analytics",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "http.hostname:www.google-analytics.com"
+        },
+        "3": {
+          "id": 3,
+          "color": "#EF843C",
+          "alias": "XiTi",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "http.hostname:xiti.com"
+        },
+        "4": {
+          "id": 4,
+          "color": "#967302",
+          "alias": "Twitter",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "http.hostname:platform.twitter.com"
+        },
+        "5": {
+          "id": 5,
+          "color": "#1F78C1",
+          "alias": "TLS",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "event_type:\"tls\""
+        },
+        "6": {
+          "id": 6,
+          "color": "#BA43A9",
+          "alias": "Google Analytics TLS",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "tls.subject.raw:*.google\\-analytics.com*"
+        },
+        "7": {
+          "id": 7,
+          "color": "#AEA2E0",
+          "alias": "Facebook TLS",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "tls.subject.raw:*facebook*"
+        },
+        "8": {
+          "id": 8,
+          "color": "#508642",
+          "alias": "Twitter TLS",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "tls.subject.raw:*twitter.com*"
+        },
+        "9": {
+          "id": 9,
+          "color": "#CCA300",
+          "alias": "Doubleclick TLS",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "tls.subject.raw:*doubleclick*"
+        },
+        "10": {
+          "id": 10,
+          "color": "#E24D42",
+          "alias": "Doubleclick",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "http.hostname:*doubleclick.net*"
+        }
+      },
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "filter": {
+      "list": {
+        "0": {
+          "type": "time",
+          "field": "@timestamp",
+          "from": "now-24h",
+          "to": "now",
+          "mandate": "must",
+          "active": true,
+          "alias": "",
+          "id": 0
+        },
+        "1": {
+          "type": "querystring",
+          "query": "http.http_refer:\"http://www.elysee.fr/\"",
+          "mandate": "must",
+          "active": false,
+          "alias": "",
+          "id": 1
+        },
+        "2": {
+          "type": "querystring",
+          "query": "http.http_refer:\"http://ww.defense.gouv.fr\"",
+          "mandate": "must",
+          "active": false,
+          "alias": "",
+          "id": 2
+        },
+        "3": {
+          "type": "querystring",
+          "query": "http.http_refer:s.tf1.fr",
+          "mandate": "must",
+          "active": false,
+          "alias": "",
+          "id": 3
+        },
+        "4": {
+          "type": "querystring",
+          "query": "http.http_refer:reflets.info",
+          "mandate": "must",
+          "active": false,
+          "alias": "",
+          "id": 4
+        },
+        "5": {
+          "type": "querystring",
+          "query": "http.http_refer:\"http://www.gouvernement.fr/\"",
+          "mandate": "must",
+          "active": false,
+          "alias": "",
+          "id": 5
+        },
+        "6": {
+          "type": "time",
+          "from": "2014-09-18T14:32:56.353Z",
+          "to": "2014-09-18T15:54:57.273Z",
+          "field": "@timestamp",
+          "mandate": "must",
+          "active": true,
+          "alias": "",
+          "id": 6
+        },
+        "7": {
+          "type": "querystring",
+          "query": "http.http_refer:\"http://edition.cnn.com\"",
+          "mandate": "must",
+          "active": false,
+          "alias": "",
+          "id": 7
+        }
+      },
+      "ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  "rows": [
+    {
+      "title": "Options",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 12,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "count",
+          "time_field": "@timestamp",
+          "value_field": null,
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "1m",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": false,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "bars": true,
+          "stack": true,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "title": "Timechart"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Data collectors",
+      "height": "150px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.http_refer.raw",
+          "exclude": [
+            "facebook.net"
+          ],
+          "missing": false,
+          "other": true,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              1
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "Facebook"
+        },
+        {
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.http_refer.raw",
+          "exclude": [],
+          "missing": false,
+          "other": true,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              4
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "Twitter"
+        },
+        {
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.http_refer.raw",
+          "exclude": [
+            "xiti.coml"
+          ],
+          "missing": false,
+          "other": true,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              3
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "XiTi"
+        },
+        {
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.http_refer.raw",
+          "exclude": [],
+          "missing": false,
+          "other": true,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              2
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "Google Analytics"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Advertising",
+      "height": "150px",
+      "editable": true,
+      "collapse": true,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 3,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.http_refer.raw",
+          "exclude": [],
+          "missing": false,
+          "other": true,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              10
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "Doubleclick"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Coookies & Co",
+      "height": "150px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 6,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.set_cookie.raw",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "HTTP Set Cookie"
+        },
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.hostname.raw",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "HTTP Hostname"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "TLS",
+      "height": "150px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 6,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "count",
+          "time_field": "@timestamp",
+          "value_field": null,
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "1m",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": false,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "bars": true,
+          "stack": true,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "browser",
+          "percentage": false,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": true
+          },
+          "title": "TLS"
+        },
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "tls.subject.raw",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "bar",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              6,
+              7
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "Selected TLS Subjects"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Graph",
+      "height": "250px",
+      "editable": true,
+      "collapse": true,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.content_type.raw",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "HTTP Content Type"
+        },
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.http_user_agent.raw",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "HTTP User Agent"
+        },
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "http.url.raw",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "HTTP URL - Top 10"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Countries",
+      "height": "150px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "map",
+          "loadingEditor": false,
+          "map": "world",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "size": 167,
+          "exclude": [],
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              5
+            ]
+          },
+          "title": "HTTPS Map",
+          "field": "geoip.country_code2"
+        },
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "map",
+          "loadingEditor": false,
+          "map": "world",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "size": 167,
+          "exclude": [],
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
+          "title": "HTTP World Map",
+          "field": "geoip.country_code2"
+        },
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "map",
+          "loadingEditor": false,
+          "map": "usa",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "size": 167,
+          "exclude": [],
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
+          "field": "geoip.country_code2",
+          "title": "HTTP USA Map"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Locations",
+      "height": "500px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "bettermap",
+          "loadingEditor": false,
+          "field": "geoip.coordinates",
+          "size": 100000,
+          "spyable": true,
+          "tooltip": "_id",
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0,
+              5
+            ]
+          },
+          "title": "HTTP World Geoip Src Map"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Events",
+      "height": "650px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "table",
+          "size": 100,
+          "pages": 5,
+          "offset": 0,
+          "sort": [
+            "_score",
+            "desc"
+          ],
+          "style": {
+            "font-size": "9pt"
+          },
+          "overflow": "min-height",
+          "fields": [
+            "@timestamp",
+            "src_ip",
+            "src_port",
+            "dest_ip",
+            "dest_port",
+            "http.hostname",
+            "http.http_refer",
+            "http.server",
+            "http.url"
+          ],
+          "highlight": [],
+          "sortable": true,
+          "header": true,
+          "paging": true,
+          "spyable": true,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0,
+              5
+            ]
+          },
+          "field_list": true,
+          "status": "Stable",
+          "trimFactor": 300,
+          "normTimes": true,
+          "title": "Documents",
+          "all_fields": false,
+          "localTime": false,
+          "timeField": "@timestamp"
+        }
+      ],
+      "notice": false
+    }
+  ],
+  "editable": true,
+  "index": {
+    "interval": "none",
+    "pattern": "[logstash-]YYYY.MM.DD",
+    "default": "_all",
+    "warm_fields": false
+  },
+  "style": "dark",
+  "failover": false,
+  "panel_hints": true,
+  "loader": {
+    "save_gist": false,
+    "save_elasticsearch": true,
+    "save_local": true,
+    "save_default": true,
+    "save_temp": true,
+    "save_temp_ttl_enable": true,
+    "save_temp_ttl": "30d",
+    "load_gist": true,
+    "load_elasticsearch": true,
+    "load_elasticsearch_size": 20,
+    "load_local": true,
+    "hide": false
+  },
+  "pulldowns": [
+    {
+      "type": "query",
+      "collapse": true,
+      "notice": false,
+      "query": "*",
+      "pinned": true,
+      "history": [
+        "http.hostname:*doubleclick.net*",
+        "tls.subject.raw:*doubleclick*",
+        "tls.subject.raw:*twitter.com*",
+        "tls.subject.raw:*facebook*",
+        "tls.subject.raw:*.google\\-analytics.com*",
+        "event_type:\"tls\"",
+        "http.hostname:platform.twitter.com",
+        "http.hostname:xiti.com",
+        "http.hostname:www.google-analytics.com",
+        "http.hostname:*.facebook.net"
+      ],
+      "remember": 10,
+      "enable": true
+    },
+    {
+      "type": "filtering",
+      "collapse": true,
+      "notice": false,
+      "enable": true
+    }
+  ],
+  "nav": [
+    {
+      "type": "timepicker",
+      "collapse": false,
+      "notice": false,
+      "status": "Stable",
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ],
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "timefield": "@timestamp",
+      "enable": true,
+      "now": false,
+      "filter_id": 0
+    }
+  ],
+  "refresh": false
+}
