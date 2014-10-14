@@ -122,7 +122,7 @@
         "0": {
           "type": "time",
           "field": "@timestamp",
-          "from": "now-24h",
+          "from": "now-2d",
           "to": "now",
           "mandate": "must",
           "active": true,
@@ -169,16 +169,6 @@
           "alias": "",
           "id": 5
         },
-        "6": {
-          "type": "time",
-          "from": "2014-09-18T14:32:56.353Z",
-          "to": "2014-09-18T15:54:57.273Z",
-          "field": "@timestamp",
-          "mandate": "must",
-          "active": true,
-          "alias": "",
-          "id": 6
-        },
         "7": {
           "type": "querystring",
           "query": "http.http_refer:\"http://edition.cnn.com\"",
@@ -195,7 +185,6 @@
         3,
         4,
         5,
-        6,
         7
       ]
     }
@@ -252,7 +241,7 @@
           },
           "auto_int": true,
           "resolution": 100,
-          "interval": "1m",
+          "interval": "30m",
           "intervals": [
             "auto",
             "1s",
@@ -623,7 +612,7 @@
           },
           "auto_int": true,
           "resolution": 100,
-          "interval": "1m",
+          "interval": "30m",
           "intervals": [
             "auto",
             "1s",
@@ -1039,7 +1028,7 @@
     {
       "type": "filtering",
       "collapse": true,
-      "notice": false,
+      "notice": true,
       "enable": true
     }
   ],
@@ -1074,7 +1063,7 @@
       ],
       "timefield": "@timestamp",
       "enable": true,
-      "now": false,
+      "now": true,
       "filter_id": 0
     }
   ],
