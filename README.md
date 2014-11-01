@@ -26,6 +26,7 @@ The templates found in the Templates directory:
 - FLOW  
 - HTTP  
 - HTTP-Extended-Custom  
+- PRIVACY
 - SSH  
 - TLS
 
