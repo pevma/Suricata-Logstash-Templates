@@ -4,7 +4,7 @@ Suricata-Logstash-Templates
 Templates for Kibana/Logstash to use with Suricata IDPS
 
 
-This repository provides 9 templates for the Kibana interface of Logstash
+This repository provides 10 templates for the Kibana interface of Logstash
 for use with Suricata IDS/IPS - Intrusion Detection and Prevention System.
 
 These templates are for use with Suricata and ELK - Elasticsearch, Logstash, 
