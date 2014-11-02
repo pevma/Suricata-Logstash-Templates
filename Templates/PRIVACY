@@ -882,7 +882,7 @@
               0
             ]
           },
-          "field": "geoip.country_code2",
+          "field": "geoip.region_name",
           "title": "HTTP USA Map"
         }
       ],
