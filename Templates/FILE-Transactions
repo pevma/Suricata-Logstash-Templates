@@ -256,7 +256,7 @@
           "spyable": true,
           "index_limit": 0,
           "title": "USA",
-          "field": "geoip.country_code2"
+          "field": "geoip.region_name"
         },
         {
           "span": 5,
