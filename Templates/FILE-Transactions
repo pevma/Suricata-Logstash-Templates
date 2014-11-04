@@ -1,122 +1,29 @@
 {
-  "title": "FILE-Transactions",
-  "services": {
-    "query": {
-      "idQueue": [],
-      "list": {
-        "0": {
-          "id": 0,
-          "color": "#7EB26D",
-          "query": "event_type:\"fileinfo\"",
-          "alias": "ALL Files",
-          "pin": false,
-          "type": "lucene",
-          "enable": true
-        },
-        "1": {
-          "id": 1,
-          "color": "#EAB839",
-          "query": "magic:\"gif\" OR magic:\"png\" OR magic:\"jpeg\" OR magic:\"bmp\"",
-          "alias": "Pictures",
-          "pin": false,
-          "type": "lucene",
-          "enable": true
-        },
-        "2": {
-          "id": 2,
-          "color": "#6ED0E0",
-          "query": "magic:\"3gp\" OR magic:\"amv\" OR magic:\"asf\" OR magic:\"asx\" OR magic:\"avi\" OR magic:\"video\" OR magic:\"mp4\" OR magic:\"avi\" OR magic:\"wmv\" OR  magic:\"mpg\" OR magic:\"mov\" OR magic:\"swf\" OR magic:\"media video\" OR magic:\"quicktime\"",
-          "alias": "Videos",
-          "pin": false,
-          "type": "lucene",
-          "enable": true
-        },
-        "3": {
-          "id": 3,
-          "color": "#BF1B00",
-          "query": "magic:\"pdf\" OR magic:\"powerpoint\" OR magic:\"office\" OR magic:\"xml\" OR magic:\"xlx\" OR magic:\"xls\" OR magic:\"microsoft word\" OR magic:\"docx\" OR magic:\"docm\" OR magic:\"rtf\"",
-          "alias": "Office Documents",
-          "pin": false,
-          "type": "lucene",
-          "enable": true
-        }
-      },
-      "ids": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    "filter": {
-      "idQueue": [
-        1
-      ],
-      "list": {
-        "0": {
-          "type": "time",
-          "field": "@timestamp",
-          "from": "now-7d",
-          "to": "now",
-          "mandate": "must",
-          "active": true,
-          "alias": "",
-          "id": 0
-        }
-      },
-      "ids": [
-        0
-      ]
-    }
+  "index": {
+    "default": "NO_TIME_FILTER_OR_INDEX_PATTERN_NOT_MATCHED",
+    "pattern": "[logstash-]YYYY.MM.DD",
+    "warm_fields": true,
+    "interval": "day"
   },
+  "style": "light",
   "rows": [
     {
-      "title": "Graph",
-      "height": "350px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
-          "span": 11,
-          "editable": true,
-          "group": [
-            "default"
-          ],
-          "type": "histogram",
-          "mode": "count",
-          "time_field": "@timestamp",
-          "value_field": null,
-          "auto_int": true,
-          "resolution": 100,
-          "interval": "1h",
-          "fill": 3,
-          "linewidth": 3,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": true,
+          "show_query": true,
           "bars": true,
-          "stack": true,
-          "points": false,
-          "lines": false,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3
-            ]
-          },
-          "title": "Events over time",
-          "tooltip": {
-            "value_type": "individual",
-            "query_as_alias": true
+          "interval": "10m",
+          "zoomlinks": true,
+          "annotate": {
+            "sort": [
+              "_score",
+              "desc"
+            ],
+            "query": "*",
+            "enable": false,
+            "field": "_type",
+            "size": 20
           },
           "intervals": [
             "auto",
@@ -133,35 +40,42 @@
             "1M",
             "1y"
           ],
-          "options": true,
+          "spyable": true,
+          "timezone": "browser",
+          "linewidth": 3,
+          "fill": 3,
           "scale": 1,
-          "y_format": "none",
+          "span": 12,
+          "title": "Events over time",
+          "tooltip": {
+            "query_as_alias": true,
+            "value_type": "individual"
+          },
+          "stack": true,
+          "derivative": false,
+          "percentage": false,
+          "auto_int": true,
+          "type": "histogram",
+          "value_field": null,
+          "x-axis": true,
+          "pointradius": 5,
+          "editable": true,
+          "zerofill": true,
           "grid": {
             "max": null,
             "min": 0
           },
-          "annotate": {
-            "enable": false,
-            "query": "*",
-            "size": 20,
-            "field": "_type",
-            "sort": [
-              "_score",
-              "desc"
-            ]
-          },
-          "pointradius": 5,
-          "show_query": true,
+          "group": [
+            "default"
+          ],
+          "legend": true,
           "legend_counts": true,
-          "zerofill": true,
-          "derivative": false
-        },
-        {
-          "error": false,
-          "span": 8,
-          "editable": true,
-          "type": "map",
-          "loadingEditor": false,
+          "time_field": "@timestamp",
+          "y-axis": true,
+          "lines": false,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
           "queries": {
             "mode": "all",
             "ids": [
@@ -171,72 +85,34 @@
               3
             ]
           },
-          "map": "world",
-          "colors": [
-            "#A0E2E2",
-            "#265656"
-          ],
-          "size": 100,
-          "exclude": [],
-          "spyable": true,
-          "index_limit": 0,
-          "title": "World",
-          "field": "geoip.country_code2"
-        },
+          "resolution": 100,
+          "options": true,
+          "interactive": true
+        }
+      ],
+      "collapse": false,
+      "title": "Graph",
+      "editable": true,
+      "height": "200px",
+      "collapsable": true
+    },
+    {
+      "title": "Trends",
+      "height": "100px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
         {
-          "error": false,
-          "span": 3,
-          "editable": true,
-          "type": "map",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3
-            ]
-          },
-          "map": "europe",
-          "colors": [
-            "#A0E2E2",
-            "#265656"
-          ],
-          "size": 100,
-          "exclude": [],
-          "spyable": true,
-          "index_limit": 0,
-          "field": "geoip.country_code2",
-          "title": "Europe"
-        },
-        {
-          "span": 8,
-          "editable": true,
-          "type": "trends",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3
-            ]
-          },
-          "style": {
-            "font-size": "14pt"
-          },
           "ago": "1d",
-          "arrangement": "vertical",
+          "style": {
+            "font-size": "14pt"
+          },
+          "span": 4,
+          "reverse": false,
           "title": "1 Day Trend",
-          "spyable": true,
-          "reverse": false
-        },
-        {
-          "error": false,
-          "span": 3,
           "editable": true,
-          "type": "map",
-          "loadingEditor": false,
+          "arrangement": "vertical",
           "queries": {
             "mode": "all",
             "ids": [
@@ -246,44 +122,19 @@
               3
             ]
           },
-          "map": "usa",
-          "colors": [
-            "#A0E2E2",
-            "#265656"
-          ],
-          "size": 100,
-          "exclude": [],
           "spyable": true,
-          "index_limit": 0,
-          "title": "USA",
-          "field": "geoip.region_name"
+          "type": "trends"
         },
         {
-          "span": 5,
-          "editable": true,
-          "type": "trends",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3
-            ]
-          },
-          "style": {
-            "font-size": "14pt"
-          },
           "ago": "4hr",
-          "arrangement": "vertical",
+          "style": {
+            "font-size": "14pt"
+          },
+          "span": 4,
+          "reverse": false,
           "title": "4 Hour Trend",
-          "spyable": true,
-          "reverse": false
-        },
-        {
-          "span": 5,
           "editable": true,
-          "type": "trends",
+          "arrangement": "vertical",
           "queries": {
             "mode": "all",
             "ids": [
@@ -293,30 +144,53 @@
               3
             ]
           },
+          "spyable": true,
+          "type": "trends"
+        },
+        {
+          "ago": "2h",
           "style": {
             "font-size": "14pt"
           },
-          "ago": "2h",
-          "arrangement": "vertical",
+          "span": 4,
+          "reverse": false,
           "title": "2 Hour Trend",
+          "editable": true,
+          "arrangement": "vertical",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
           "spyable": true,
-          "reverse": false
+          "type": "trends"
         }
       ],
       "notice": false
     },
     {
-      "title": "Graph2",
+      "title": "Maps",
       "height": "250px",
       "editable": true,
       "collapse": false,
       "collapsable": true,
       "panels": [
         {
+          "map": "world",
+          "span": 6,
+          "title": "World",
           "error": false,
-          "span": 5,
           "editable": true,
-          "type": "terms",
+          "field": "geoip.country_code2",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "index_limit": 0,
           "queries": {
             "mode": "all",
             "ids": [
@@ -326,121 +200,131 @@
               3
             ]
           },
-          "field": "http.hostname.raw",
+          "spyable": true,
           "exclude": [],
-          "missing": false,
-          "other": false,
+          "loadingEditor": false,
+          "type": "map",
+          "size": 100
+        },
+        {
+          "map": "europe",
+          "span": 3,
+          "title": "Europe",
+          "error": false,
+          "editable": true,
+          "field": "geoip.country_code2",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "index_limit": 0,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "spyable": true,
+          "exclude": [],
+          "type": "map",
+          "size": 100
+        },
+        {
+          "map": "usa",
+          "span": 3,
+          "title": "USA",
+          "error": false,
+          "editable": true,
+          "field": "geoip.country_code2",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "index_limit": 0,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "spyable": true,
+          "exclude": [],
+          "loadingEditor": false,
+          "type": "map",
+          "size": 100
+        }
+      ],
+      "notice": false
+    },
+    {
+      "notice": false,
+      "panels": [
+        {
+          "labels": true,
+          "tmode": "terms",
+          "valuefield": "",
+          "exclude": [],
+          "spyable": true,
           "size": 15,
-          "order": "count",
           "style": {
             "font-size": "10pt"
           },
-          "donut": false,
+          "span": 4,
+          "title": "Downloaded files from www hosts",
           "tilt": false,
-          "labels": true,
           "arrangement": "horizontal",
+          "field": "http.hostname.raw",
+          "other": false,
+          "type": "terms",
+          "missing": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "editable": true,
           "chart": "table",
           "counter_pos": "below",
-          "spyable": true,
-          "title": "Downloaded files from www hosts",
-          "tmode": "terms",
           "tstat": "total",
-          "valuefield": ""
+          "donut": false,
+          "error": false,
+          "order": "count"
         },
         {
-          "span": 5,
-          "editable": true,
-          "type": "hits",
-          "loadingEditor": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3
-            ]
-          },
-          "style": {
-            "font-size": "10pt"
-          },
-          "arrangement": "vertical",
-          "chart": "bar",
-          "counter_pos": "above",
-          "donut": false,
-          "tilt": false,
           "labels": true,
-          "spyable": true,
-          "title": "Total hits"
-        }
-      ],
-      "notice": false
-    },
-    {
-      "title": "Type fo Files",
-      "height": "350px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "error": false,
-          "span": 6,
-          "editable": true,
-          "type": "terms",
-          "loadingEditor": false,
-          "field": "fileinfo.magic.raw",
-          "exclude": [],
-          "missing": false,
-          "other": false,
-          "size": 15,
-          "order": "count",
-          "style": {
-            "font-size": "10pt"
-          },
-          "donut": false,
-          "tilt": false,
-          "labels": true,
-          "arrangement": "horizontal",
-          "chart": "pie",
-          "counter_pos": "above",
-          "spyable": true,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3
-            ]
-          },
           "tmode": "terms",
-          "tstat": "total",
           "valuefield": "",
-          "title": "Type of Files Transferred"
-        },
-        {
-          "error": false,
-          "span": 6,
-          "editable": true,
-          "type": "terms",
-          "loadingEditor": false,
-          "field": "geoip.city_name.raw",
           "exclude": [],
-          "missing": false,
-          "other": false,
+          "spyable": true,
           "size": 15,
-          "order": "count",
           "style": {
             "font-size": "10pt"
           },
-          "donut": false,
+          "span": 5,
+          "title": "Type of Files Transferred",
           "tilt": false,
-          "labels": true,
-          "arrangement": "horizontal",
+          "arrangement": "vertical",
+          "field": "fileinfo.magic.raw",
+          "other": false,
+          "loadingEditor": false,
+          "type": "terms",
+          "missing": false,
+          "error": false,
+          "editable": true,
           "chart": "table",
           "counter_pos": "above",
-          "spyable": true,
+          "tstat": "total",
+          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -450,35 +334,70 @@
               3
             ]
           },
-          "tmode": "terms",
-          "tstat": "count",
-          "valuefield": "filename",
-          "title": "Per city downlaods"
+          "order": "count"
+        },
+        {
+          "tilt": false,
+          "style": {
+            "font-size": "10pt"
+          },
+          "span": 3,
+          "title": "Total hits",
+          "counter_pos": "above",
+          "labels": true,
+          "editable": true,
+          "chart": "bar",
+          "arrangement": "vertical",
+          "donut": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "spyable": true,
+          "loadingEditor": false,
+          "type": "hits"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "Graph2",
+      "editable": true,
+      "height": "250px",
+      "collapsable": true
     },
     {
-      "title": "Events",
-      "height": "350px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
-          "error": false,
-          "span": 12,
-          "editable": true,
-          "type": "table",
-          "loadingEditor": false,
+          "header": true,
+          "trimFactor": 300,
+          "spyable": true,
+          "field_list": true,
           "size": 100,
-          "pages": 5,
-          "offset": 0,
+          "all_fields": false,
+          "style": {
+            "font-size": "9pt"
+          },
+          "span": 12,
+          "title": "Network File Transaction",
+          "normTimes": true,
+          "loadingEditor": false,
+          "type": "table",
           "sort": [
             "_score",
             "desc"
           ],
+          "error": false,
+          "editable": true,
+          "offset": 0,
           "overflow": "min-height",
+          "pages": 5,
+          "localTime": false,
+          "sortable": true,
           "fields": [
             "@timestamp",
             "src_ip",
@@ -489,16 +408,7 @@
             "fileinfo.size",
             "http.hostname"
           ],
-          "highlight": [],
-          "sortable": true,
-          "header": true,
           "paging": true,
-          "field_list": true,
-          "all_fields": false,
-          "trimFactor": 300,
-          "localTime": false,
-          "timeField": "@timestamp",
-          "spyable": true,
           "queries": {
             "mode": "all",
             "ids": [
@@ -508,70 +418,64 @@
               3
             ]
           },
-          "style": {
-            "font-size": "9pt"
-          },
-          "normTimes": true,
-          "title": "Network File Transaction"
+          "timeField": "@timestamp",
+          "highlight": []
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "Events",
+      "editable": true,
+      "height": "350px",
+      "collapsable": true
     }
   ],
-  "editable": true,
-  "index": {
-    "interval": "day",
-    "pattern": "[logstash-]YYYY.MM.DD",
-    "default": "NO_TIME_FILTER_OR_INDEX_PATTERN_NOT_MATCHED",
-    "warm_fields": true
-  },
-  "style": "dark",
+  "title": "FILE-Transactions",
   "failover": false,
+  "editable": true,
+  "refresh": false,
   "loader": {
-    "save_gist": false,
-    "save_elasticsearch": true,
-    "save_local": true,
-    "save_default": true,
-    "save_temp": true,
-    "save_temp_ttl_enable": true,
-    "save_temp_ttl": "30d",
     "load_gist": true,
-    "load_elasticsearch": true,
+    "hide": false,
+    "save_temp": true,
     "load_elasticsearch_size": 20,
     "load_local": true,
-    "hide": false
+    "save_temp_ttl": "30d",
+    "load_elasticsearch": true,
+    "save_local": true,
+    "save_elasticsearch": true,
+    "save_temp_ttl_enable": true,
+    "save_gist": false,
+    "save_default": true
   },
-  "panel_hints": true,
   "pulldowns": [
     {
-      "type": "query",
-      "collapse": true,
       "notice": false,
       "enable": true,
-      "query": "*",
+      "collapse": true,
+      "remember": 10,
       "pinned": true,
+      "query": "*",
+      "type": "query",
       "history": [
         "magic:\"pdf\" OR magic:\"powerpoint\" OR magic:\"office\" OR magic:\"xml\" OR magic:\"xlx\" OR magic:\"xls\" OR magic:\"microsoft word\" OR magic:\"docx\" OR magic:\"docm\" OR magic:\"rtf\"",
         "magic:\"3gp\" OR magic:\"amv\" OR magic:\"asf\" OR magic:\"asx\" OR magic:\"avi\" OR magic:\"video\" OR magic:\"mp4\" OR magic:\"avi\" OR magic:\"wmv\" OR  magic:\"mpg\" OR magic:\"mov\" OR magic:\"swf\" OR magic:\"media video\" OR magic:\"quicktime\"",
         "magic:\"gif\" OR magic:\"png\" OR magic:\"jpeg\" OR magic:\"bmp\"",
         "event_type:\"file\""
-      ],
-      "remember": 10
+      ]
     },
     {
+      "notice": true,
+      "enable": true,
       "type": "filtering",
-      "collapse": true,
-      "notice": false,
-      "enable": true
+      "collapse": true
     }
   ],
   "nav": [
     {
-      "type": "timepicker",
-      "collapse": false,
+      "status": "Stable",
       "notice": false,
       "enable": true,
-      "status": "Stable",
+      "collapse": false,
       "time_options": [
         "5m",
         "15m",
@@ -595,10 +499,80 @@
         "2h",
         "1d"
       ],
+      "filter_id": 0,
       "timefield": "@timestamp",
       "now": true,
-      "filter_id": 0
+      "type": "timepicker"
     }
   ],
-  "refresh": false
+  "services": {
+    "filter": {
+      "list": {
+        "0": {
+          "type": "time",
+          "field": "@timestamp",
+          "from": "now-24h",
+          "to": "now",
+          "mandate": "must",
+          "active": true,
+          "alias": "",
+          "id": 0
+        }
+      },
+      "ids": [
+        0
+      ],
+      "idQueue": [
+        1
+      ]
+    },
+    "query": {
+      "list": {
+        "0": {
+          "enable": true,
+          "pin": false,
+          "color": "#7EB26D",
+          "alias": "ALL Files",
+          "query": "event_type:\"fileinfo\"",
+          "type": "lucene",
+          "id": 0
+        },
+        "1": {
+          "enable": true,
+          "pin": false,
+          "color": "#EAB839",
+          "alias": "Pictures",
+          "query": "magic:\"gif\" OR magic:\"png\" OR magic:\"jpeg\" OR magic:\"bmp\"",
+          "type": "lucene",
+          "id": 1
+        },
+        "2": {
+          "enable": true,
+          "pin": false,
+          "color": "#6ED0E0",
+          "alias": "Videos",
+          "query": "magic:\"3gp\" OR magic:\"amv\" OR magic:\"asf\" OR magic:\"asx\" OR magic:\"avi\" OR magic:\"video\" OR magic:\"mp4\" OR magic:\"avi\" OR magic:\"wmv\" OR  magic:\"mpg\" OR magic:\"mov\" OR magic:\"swf\" OR magic:\"media video\" OR magic:\"quicktime\"",
+          "type": "lucene",
+          "id": 2
+        },
+        "3": {
+          "enable": true,
+          "pin": false,
+          "color": "#BF1B00",
+          "alias": "Office Documents",
+          "query": "magic:\"pdf\" OR magic:\"powerpoint\" OR magic:\"office\" OR magic:\"xml\" OR magic:\"xlx\" OR magic:\"xls\" OR magic:\"microsoft word\" OR magic:\"docx\" OR magic:\"docm\" OR magic:\"rtf\"",
+          "type": "lucene",
+          "id": 3
+        }
+      },
+      "ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "idQueue": []
+    }
+  },
+  "panel_hints": true
 }
