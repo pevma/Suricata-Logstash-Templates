@@ -9,11 +9,16 @@
   "rows": [
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Timeline",
+      "editable": true,
+      "height": "200px",
       "panels": [
         {
           "show_query": true,
           "bars": true,
-          "interval": "5m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -22,8 +27,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -48,17 +53,28 @@
           "span": 12,
           "title": "Events over time",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "individual"
+            "value_type": "individual",
+            "query_as_alias": true
           },
-          "stack": true,
+          "legend": true,
           "derivative": false,
           "percentage": false,
           "auto_int": true,
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
           "editable": true,
           "zerofill": true,
           "grid": {
@@ -68,14 +84,29 @@
           "group": [
             "default"
           ],
-          "legend": true,
+          "stack": true,
           "legend_counts": true,
           "time_field": "@timestamp",
-          "y-axis": true,
+          "interval": "5m",
           "lines": false,
           "y_format": "short",
           "points": false,
           "mode": "count",
+          "pointradius": 5,
+          "resolution": 200,
+          "options": true,
+          "interactive": true
+        }
+      ]
+    },
+    {
+      "notice": false,
+      "panels": [
+        {
+          "exclude": [],
+          "map": "world",
+          "span": 6,
+          "title": "World",
           "queries": {
             "mode": "all",
             "ids": [
@@ -84,32 +115,10 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
-          "resolution": 200,
-          "options": true,
-          "interactive": true
-        }
-      ],
-      "collapse": false,
-      "title": "Timeline",
-      "editable": true,
-      "height": "200px",
-      "collapsable": true
-    },
-    {
-      "title": "Maps",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "map": "world",
-          "span": 6,
-          "title": "World",
-          "error": false,
           "editable": true,
           "field": "geoip.country_code2",
           "colors": [
@@ -117,28 +126,29 @@
             "#265656"
           ],
           "index_limit": 0,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5
-            ]
-          },
+          "error": false,
           "spyable": true,
-          "exclude": [],
           "loadingEditor": false,
           "type": "map",
           "size": 200
         },
         {
+          "exclude": [],
           "map": "europe",
           "span": 3,
           "title": "Europe",
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
           "editable": true,
           "field": "geoip.country_code2",
           "colors": [
@@ -146,59 +156,49 @@
             "#265656"
           ],
           "index_limit": 0,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5
-            ]
-          },
+          "error": false,
           "spyable": true,
-          "exclude": [],
           "type": "map",
           "size": 100
         },
         {
+          "exclude": [],
           "map": "usa",
           "span": 3,
           "title": "USA",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5
-            ]
-          },
+          "error": false,
           "editable": true,
           "field": "geoip.country_code2",
           "colors": [
             "#A0E2E2",
             "#265656"
           ],
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
           "spyable": true,
-          "exclude": [],
           "loadingEditor": false,
           "type": "map",
           "size": 100
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "Maps",
+      "editable": true,
+      "height": "250px",
+      "collapsable": true
     },
     {
-      "title": "Trends",
-      "height": "200px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "ago": "2w",
@@ -218,7 +218,8 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
           "spyable": true,
@@ -243,7 +244,8 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
           "spyable": true,
@@ -268,7 +270,8 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
           "spyable": true,
@@ -292,7 +295,8 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
           "spyable": true,
@@ -316,69 +320,23 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
           "spyable": true,
           "type": "trends"
         },
         {
-          "span": 2,
-          "editable": true,
-          "type": "trends",
-          "loadingEditor": false,
           "ago": "1h",
-          "arrangement": "vertical",
-          "reverse": false,
-          "spyable": true,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5
-            ]
-          },
           "style": {
             "font-size": "14pt"
           },
-          "title": "1 hour trend"
-        }
-      ],
-      "notice": false
-    },
-    {
-      "title": "NSM",
-      "height": "200px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "error": false,
           "span": 2,
+          "reverse": false,
+          "title": "1 hour trend",
           "editable": true,
-          "type": "terms",
-          "loadingEditor": false,
-          "field": "http.hostname",
-          "exclude": [],
-          "missing": false,
-          "other": true,
-          "size": 10,
-          "order": "count",
-          "style": {
-            "font-size": "10pt"
-          },
-          "donut": false,
-          "tilt": false,
-          "labels": true,
-          "arrangement": "horizontal",
-          "chart": "table",
-          "counter_pos": "above",
-          "spyable": true,
+          "arrangement": "vertical",
           "queries": {
             "mode": "all",
             "ids": [
@@ -387,13 +345,62 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
+          "spyable": true,
+          "loadingEditor": false,
+          "type": "trends"
+        }
+      ],
+      "collapse": false,
+      "title": "Trends",
+      "editable": true,
+      "height": "200px",
+      "collapsable": true
+    },
+    {
+      "notice": false,
+      "panels": [
+        {
+          "labels": true,
           "tmode": "terms",
-          "tstat": "total",
           "valuefield": "",
-          "title": "HTTP hostname"
+          "exclude": [],
+          "spyable": true,
+          "size": 10,
+          "style": {
+            "font-size": "10pt"
+          },
+          "span": 2,
+          "title": "HTTP hostname",
+          "tilt": false,
+          "arrangement": "horizontal",
+          "field": "http.hostname",
+          "other": false,
+          "loadingEditor": false,
+          "type": "terms",
+          "missing": false,
+          "error": false,
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "order": "count"
         },
         {
           "labels": true,
@@ -421,7 +428,8 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
           "editable": true,
@@ -451,12 +459,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "bar",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -465,9 +467,16 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
+          "editable": true,
+          "chart": "bar",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -486,17 +495,11 @@
           "title": "File Types",
           "tilt": false,
           "arrangement": "horizontal",
-          "field": "fileinfo.magic.raw",
+          "field": "fileinfo.type.raw",
           "other": false,
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -505,9 +508,16 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -529,12 +539,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -543,16 +547,32 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "NSM",
+      "editable": true,
+      "height": "200px",
+      "collapsable": true
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Global data",
+      "editable": true,
+      "height": "250px",
       "panels": [
         {
           "labels": true,
@@ -573,12 +593,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -587,9 +601,16 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -611,12 +632,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -625,9 +640,16 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -649,38 +671,43 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
           "editable": true,
           "chart": "table",
           "counter_pos": "above",
           "tstat": "total",
           "donut": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5
-            ]
-          },
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": false,
-      "title": "Global data",
-      "editable": true,
-      "height": "250px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "GeoIP Coordinates",
+      "editable": true,
+      "height": "550px",
       "panels": [
         {
           "span": 10,
           "title": "GeoIP Localization",
+          "error": false,
+          "editable": true,
+          "tooltip": "_id",
+          "field": "geoip.coordinates",
           "queries": {
             "mode": "all",
             "ids": [
@@ -689,51 +716,44 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
-          "editable": true,
-          "tooltip": "_id",
-          "field": "geoip.coordinates",
-          "error": false,
           "spyable": true,
           "loadingEditor": false,
           "type": "bettermap",
           "size": 1000
         },
         {
-          "error": false,
           "span": 2,
+          "title": "Geographical data",
           "editable": true,
-          "type": "column",
+          "error": false,
           "loadingEditor": false,
           "panels": [
             {
-              "loading": false,
-              "error": false,
               "sizeable": false,
-              "draggable": false,
-              "removable": false,
-              "span": 10,
+              "labels": true,
               "height": "125px",
-              "editable": true,
-              "type": "terms",
-              "field": "geoip.city_name.raw",
+              "tmode": "terms",
+              "valuefield": "",
+              "spyable": true,
               "exclude": [],
-              "missing": true,
-              "other": true,
               "size": 10,
-              "order": "count",
               "style": {
                 "font-size": "10pt"
               },
-              "donut": false,
+              "loading": false,
+              "span": 10,
+              "title": "Per city downloads",
               "tilt": false,
-              "labels": true,
               "arrangement": "horizontal",
-              "chart": "table",
-              "counter_pos": "above",
-              "spyable": true,
+              "field": "geoip.city_name.raw",
+              "other": false,
+              "removable": false,
+              "type": "terms",
+              "missing": false,
               "queries": {
                 "mode": "all",
                 "ids": [
@@ -742,41 +762,41 @@
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  6
                 ]
               },
-              "tmode": "terms",
+              "editable": true,
+              "chart": "table",
+              "counter_pos": "above",
               "tstat": "total",
-              "valuefield": "",
-              "title": "Per city downloads"
+              "draggable": false,
+              "donut": false,
+              "error": false,
+              "order": "count"
             },
             {
-              "loading": false,
-              "error": false,
               "sizeable": false,
-              "draggable": false,
-              "removable": false,
-              "span": 10,
+              "labels": true,
               "height": "125px",
-              "editable": true,
-              "type": "terms",
               "tmode": "terms",
-              "field": "geoip.country_name.raw",
+              "valuefield": "",
+              "spyable": true,
               "exclude": [],
-              "missing": true,
-              "other": true,
               "size": 10,
-              "order": "count",
               "style": {
                 "font-size": "10pt"
               },
-              "donut": false,
+              "loading": false,
+              "span": 10,
+              "title": "Per countries download",
               "tilt": false,
-              "labels": true,
               "arrangement": "horizontal",
-              "chart": "table",
-              "counter_pos": "above",
-              "spyable": true,
+              "field": "geoip.country_name.raw",
+              "other": false,
+              "removable": false,
+              "type": "terms",
+              "missing": false,
               "queries": {
                 "mode": "all",
                 "ids": [
@@ -785,25 +805,31 @@
                   2,
                   3,
                   4,
-                  5
+                  5,
+                  6
                 ]
               },
+              "editable": true,
+              "chart": "table",
+              "counter_pos": "above",
               "tstat": "total",
-              "valuefield": "",
-              "title": "Per countries download"
+              "draggable": false,
+              "donut": false,
+              "error": false,
+              "order": "count"
             }
           ],
-          "title": "Geographical data"
+          "type": "column"
         }
-      ],
-      "collapse": false,
-      "title": "GeoIP Coordinates",
-      "editable": true,
-      "height": "550px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Events",
+      "editable": true,
+      "height": "350px",
       "panels": [
         {
           "header": true,
@@ -817,22 +843,13 @@
           },
           "span": 12,
           "title": "ALL Details",
-          "normTimes": true,
+          "pages": 5,
           "loadingEditor": false,
           "type": "table",
           "sort": [
             "_score",
             "desc"
           ],
-          "error": false,
-          "editable": true,
-          "offset": 0,
-          "overflow": "min-height",
-          "pages": 5,
-          "localTime": false,
-          "sortable": true,
-          "fields": [],
-          "paging": true,
           "queries": {
             "mode": "all",
             "ids": [
@@ -841,18 +858,23 @@
               2,
               3,
               4,
-              5
+              5,
+              6
             ]
           },
+          "editable": true,
+          "offset": 0,
+          "overflow": "min-height",
+          "normTimes": true,
+          "localTime": false,
+          "sortable": true,
+          "fields": [],
+          "paging": true,
+          "error": false,
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Events",
-      "editable": true,
-      "height": "350px",
-      "collapsable": true
+      ]
     }
   ],
   "title": "ALL",
@@ -868,8 +890,8 @@
     "save_temp_ttl": "30d",
     "load_elasticsearch": true,
     "save_local": true,
-    "save_elasticsearch": true,
     "save_temp_ttl_enable": true,
+    "save_elasticsearch": true,
     "save_gist": false,
     "save_default": true
   },
@@ -878,11 +900,10 @@
       "notice": false,
       "enable": true,
       "collapse": true,
-      "remember": 10,
       "pinned": true,
       "query": "*",
-      "type": "query",
       "history": [
+        "event_type:\"smtp\"",
         "event_type:\"ssh\"",
         "event_type:\"http\"",
         "event_type:\"dns\"",
@@ -891,12 +912,13 @@
         "event_type:\"alert\"",
         "http*",
         "*",
-        "tls*",
-        "tls.*"
-      ]
+        "tls*"
+      ],
+      "type": "query",
+      "remember": 10
     },
     {
-      "notice": true,
+      "notice": false,
       "enable": true,
       "type": "filtering",
       "collapse": true
@@ -941,13 +963,13 @@
     "filter": {
       "list": {
         "0": {
-          "type": "time",
-          "field": "@timestamp",
           "from": "now-24h",
           "to": "now",
+          "field": "@timestamp",
+          "alias": "",
           "mandate": "must",
           "active": true,
-          "alias": "",
+          "type": "time",
           "id": 0
         }
       },
@@ -962,7 +984,7 @@
       "list": {
         "0": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#BF1B00",
           "alias": "Alerts",
           "query": "event_type:\"alert\"",
@@ -971,7 +993,7 @@
         },
         "1": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#0A437C",
           "alias": "Files",
           "query": "event_type:\"fileinfo\"",
@@ -980,7 +1002,7 @@
         },
         "2": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#E5A8E2",
           "alias": "TLS",
           "query": "event_type:\"tls\"",
@@ -989,7 +1011,7 @@
         },
         "3": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#7EB26D",
           "alias": "DNS",
           "query": "event_type:\"dns\"",
@@ -998,7 +1020,7 @@
         },
         "4": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#70DBED",
           "alias": "HTTP",
           "query": "event_type:\"http\"",
@@ -1007,12 +1029,21 @@
         },
         "5": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#EAB839",
           "alias": "SSH",
           "query": "event_type:\"ssh\"",
           "type": "lucene",
           "id": 5
+        },
+        "6": {
+          "id": 6,
+          "color": "#BA43A9",
+          "alias": "SMTP",
+          "pin": true,
+          "type": "lucene",
+          "enable": true,
+          "query": "event_type:\"smtp\""
         }
       },
       "ids": [
@@ -1021,7 +1052,8 @@
         2,
         3,
         4,
-        5
+        5,
+        6
       ],
       "idQueue": []
     }

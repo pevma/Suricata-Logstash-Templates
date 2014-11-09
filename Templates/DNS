@@ -9,11 +9,16 @@
   "rows": [
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Graph",
+      "editable": true,
+      "height": "220px",
       "panels": [
         {
           "show_query": true,
           "bars": false,
-          "interval": "10m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -22,8 +27,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -48,17 +53,22 @@
           "span": 10,
           "title": "Events over time",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "individual"
+            "value_type": "individual",
+            "query_as_alias": true
           },
-          "stack": false,
+          "legend": true,
           "derivative": false,
           "percentage": true,
           "auto_int": true,
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              3
+            ]
+          },
           "editable": true,
           "zerofill": true,
           "grid": {
@@ -68,184 +78,179 @@
           "group": [
             "default"
           ],
-          "legend": true,
+          "stack": false,
           "legend_counts": true,
           "time_field": "@timestamp",
-          "y-axis": true,
+          "interval": "10m",
           "lines": true,
           "y_format": "none",
           "points": false,
           "mode": "count",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              3
-            ]
-          },
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
         },
         {
-          "error": false,
           "span": 2,
+          "title": "Trends",
           "editable": true,
-          "type": "column",
+          "error": false,
           "loadingEditor": false,
           "panels": [
             {
-              "type": "trends",
               "ago": "1d",
-              "height": "60px",
-              "arrangement": "vertical",
+              "style": {
+                "font-size": "12pt"
+              },
               "reverse": false,
-              "spyable": true,
+              "title": "1 day trend",
+              "arrangement": "vertical",
               "queries": {
                 "mode": "all",
                 "ids": [
                   3
                 ]
               },
-              "style": {
-                "font-size": "12pt"
-              },
-              "title": "1 day trend"
+              "spyable": true,
+              "height": "60px",
+              "type": "trends"
             },
             {
-              "type": "trends",
               "ago": "4h",
-              "height": "60px",
-              "arrangement": "vertical",
+              "style": {
+                "font-size": "12pt"
+              },
               "reverse": false,
-              "spyable": true,
+              "title": "4 hour trend",
+              "arrangement": "vertical",
               "queries": {
                 "mode": "all",
                 "ids": [
                   3
                 ]
               },
-              "style": {
-                "font-size": "12pt"
-              },
-              "title": "4 hour trend"
+              "spyable": true,
+              "height": "60px",
+              "type": "trends"
             },
             {
-              "loading": false,
-              "sizeable": false,
-              "draggable": false,
-              "removable": false,
-              "span": 10,
-              "height": "60px",
-              "editable": true,
-              "type": "trends",
               "ago": "1h",
-              "arrangement": "vertical",
+              "style": {
+                "font-size": "12pt"
+              },
+              "loading": false,
+              "span": 10,
               "reverse": false,
-              "spyable": true,
+              "title": "1 hour trend",
+              "editable": true,
+              "height": "60px",
+              "draggable": false,
+              "sizeable": false,
+              "removable": false,
               "queries": {
                 "mode": "all",
                 "ids": [
                   3
                 ]
               },
-              "style": {
-                "font-size": "12pt"
-              },
-              "title": "1 hour trend"
+              "spyable": true,
+              "arrangement": "vertical",
+              "type": "trends"
             }
           ],
-          "title": "Trends"
+          "type": "column"
         }
-      ],
-      "collapse": false,
-      "title": "Graph",
-      "editable": true,
-      "height": "220px",
-      "collapsable": true
-    },
-    {
-      "title": "Maps",
-      "height": "200px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "map": "world",
-          "span": 6,
-          "title": "World",
-          "error": false,
-          "editable": true,
-          "field": "geoip.country_code2",
-          "colors": [
-            "#A0E2E2",
-            "#265656"
-          ],
-          "index_limit": 0,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              3
-            ]
-          },
-          "spyable": true,
-          "exclude": [],
-          "loadingEditor": false,
-          "type": "map",
-          "size": 100
-        },
-        {
-          "map": "europe",
-          "span": 3,
-          "title": "Europe",
-          "error": false,
-          "editable": true,
-          "field": "geoip.country_code2",
-          "colors": [
-            "#A0E2E2",
-            "#265656"
-          ],
-          "index_limit": 0,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              3
-            ]
-          },
-          "spyable": true,
-          "exclude": [],
-          "type": "map",
-          "size": 100
-        },
-        {
-          "map": "usa",
-          "span": 3,
-          "title": "USA",
-          "error": false,
-          "editable": true,
-          "field": "geoip.country_code2",
-          "colors": [
-            "#A0E2E2",
-            "#265656"
-          ],
-          "index_limit": 0,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              3
-            ]
-          },
-          "spyable": true,
-          "exclude": [],
-          "loadingEditor": false,
-          "type": "map",
-          "size": 100
-        }
-      ],
-      "notice": false
+      ]
     },
     {
       "notice": false,
+      "panels": [
+        {
+          "exclude": [],
+          "map": "world",
+          "span": 6,
+          "title": "World",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              3
+            ]
+          },
+          "editable": true,
+          "field": "geoip.country_code2",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "index_limit": 0,
+          "error": false,
+          "spyable": true,
+          "loadingEditor": false,
+          "type": "map",
+          "size": 100
+        },
+        {
+          "exclude": [],
+          "map": "europe",
+          "span": 3,
+          "title": "Europe",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              3
+            ]
+          },
+          "editable": true,
+          "field": "geoip.country_code2",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "index_limit": 0,
+          "error": false,
+          "spyable": true,
+          "type": "map",
+          "size": 100
+        },
+        {
+          "exclude": [],
+          "map": "usa",
+          "span": 3,
+          "title": "USA",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              3
+            ]
+          },
+          "editable": true,
+          "field": "geoip.country_code2",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
+          "index_limit": 0,
+          "error": false,
+          "spyable": true,
+          "loadingEditor": false,
+          "type": "map",
+          "size": 100
+        }
+      ],
+      "collapse": false,
+      "title": "Maps",
+      "editable": true,
+      "height": "200px",
+      "collapsable": true
+    },
+    {
+      "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Graph2",
+      "editable": true,
+      "height": "250px",
       "panels": [
         {
           "labels": true,
@@ -298,33 +303,24 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "bar",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               3
             ]
           },
+          "editable": true,
+          "chart": "bar",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": false,
-      "title": "Graph2",
-      "editable": true,
-      "height": "250px",
-      "collapsable": true
+      ]
     },
     {
-      "title": "DNS data",
-      "height": "200px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "labels": true,
@@ -345,18 +341,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               3
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -378,18 +374,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "bar",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               3
             ]
           },
+          "editable": true,
+          "chart": "bar",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -411,53 +407,62 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              3
+            ]
+          },
           "editable": true,
           "chart": "pie",
           "counter_pos": "above",
           "tstat": "total",
           "donut": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              3
-            ]
-          },
+          "error": false,
           "order": "count"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "DNS data",
+      "editable": true,
+      "height": "200px",
+      "collapsable": true
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "GeoIP Coordinates",
+      "editable": true,
+      "height": "550px",
       "panels": [
         {
           "span": 12,
           "title": "GeoIP Localization",
+          "error": false,
+          "editable": true,
+          "tooltip": "_id",
+          "field": "geoip.coordinates",
           "queries": {
             "mode": "all",
             "ids": [
               3
             ]
           },
-          "editable": true,
-          "tooltip": "_id",
-          "field": "geoip.coordinates",
-          "error": false,
           "spyable": true,
           "loadingEditor": false,
           "type": "bettermap",
           "size": 100000
         }
-      ],
-      "collapse": false,
-      "title": "GeoIP Coordinates",
-      "editable": true,
-      "height": "550px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Events",
+      "editable": true,
+      "height": "350px",
       "panels": [
         {
           "header": true,
@@ -471,18 +476,23 @@
           },
           "span": 12,
           "title": "DNS Transaction Details",
-          "normTimes": true,
+          "pages": 5,
           "loadingEditor": false,
           "type": "table",
           "sort": [
             "_score",
             "desc"
           ],
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              3
+            ]
+          },
           "editable": true,
           "offset": 0,
           "overflow": "min-height",
-          "pages": 5,
+          "normTimes": true,
           "localTime": false,
           "sortable": true,
           "fields": [
@@ -496,21 +506,11 @@
             "dns.rdata"
           ],
           "paging": true,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              3
-            ]
-          },
+          "error": false,
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Events",
-      "editable": true,
-      "height": "350px",
-      "collapsable": true
+      ]
     }
   ],
   "title": "DNS",
@@ -526,8 +526,8 @@
     "save_temp_ttl": "30d",
     "load_elasticsearch": true,
     "save_local": true,
-    "save_elasticsearch": true,
     "save_temp_ttl_enable": true,
+    "save_elasticsearch": true,
     "save_gist": false,
     "save_default": true
   },
@@ -536,10 +536,8 @@
       "notice": false,
       "enable": true,
       "collapse": true,
-      "remember": 10,
       "pinned": true,
       "query": "*",
-      "type": "query",
       "history": [
         "event_type:\"dns\"",
         "dns*",
@@ -548,7 +546,9 @@
         "http*",
         "http",
         ""
-      ]
+      ],
+      "type": "query",
+      "remember": 10
     },
     {
       "notice": true,
@@ -617,7 +617,7 @@
       "list": {
         "3": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#70DBED",
           "alias": "DNS transactions",
           "query": "event_type:\"dns\"",

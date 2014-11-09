@@ -9,11 +9,16 @@
   "rows": [
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Options",
+      "editable": true,
+      "height": "200px",
       "panels": [
         {
           "show_query": true,
           "bars": false,
-          "interval": "10m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -22,8 +27,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -41,14 +46,14 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 12,
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -57,21 +62,6 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": true,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "all",
             "ids": [
@@ -80,19 +70,34 @@
               2
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "10m",
+          "lines": true,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
         }
-      ],
-      "collapse": false,
-      "title": "Options",
-      "editable": true,
-      "height": "200px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Graph",
+      "editable": true,
+      "height": "250px",
       "panels": [
         {
           "labels": true,
@@ -113,12 +118,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -127,6 +126,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -148,12 +153,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -162,6 +161,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -183,12 +188,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -197,6 +196,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -218,12 +223,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -232,21 +231,18 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": false,
-      "title": "Graph",
-      "editable": true,
-      "height": "250px",
-      "collapsable": true
+      ]
     },
     {
-      "title": "Volumetry",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "labels": true,
@@ -267,12 +263,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -281,6 +271,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -302,12 +298,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -316,6 +306,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -337,12 +333,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -351,6 +341,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -372,12 +368,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -386,17 +376,23 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "Volumetry",
+      "editable": true,
+      "height": "250px",
+      "collapsable": true
     },
     {
-      "title": "Flow info",
-      "height": "150px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "labels": true,
@@ -417,12 +413,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -431,6 +421,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -452,12 +448,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -466,6 +456,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -487,12 +483,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -501,6 +491,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -513,7 +509,9 @@
           "style": {
             "font-size": "10pt"
           },
-          "span": 3,
+          "group": [
+            "default"
+          ],
           "title": "Flow Age - Number of flows",
           "tilt": false,
           "arrangement": "horizontal",
@@ -521,6 +519,13 @@
           "other": false,
           "type": "terms",
           "missing": false,
+          "error": false,
+          "editable": true,
+          "chart": "pie",
+          "span": 3,
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -529,26 +534,17 @@
               2
             ]
           },
-          "editable": true,
-          "chart": "pie",
-          "group": [
-            "default"
-          ],
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
-          "error": false,
           "order": "count"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "Flow info",
+      "editable": true,
+      "height": "150px",
+      "collapsable": true
     },
     {
-      "title": "TCP State",
-      "height": "150px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "labels": true,
@@ -569,12 +565,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -583,6 +573,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -604,12 +600,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -618,6 +608,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -639,12 +635,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -653,6 +643,12 @@
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -674,60 +670,72 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2
+            ]
+          },
           "editable": true,
           "chart": "table",
           "counter_pos": "above",
           "tstat": "total",
           "donut": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2
-            ]
-          },
+          "error": false,
           "order": "count"
         }
       ],
-      "notice": false
-    },
-    {
-      "title": "Geoip",
-      "height": "350px",
-      "editable": true,
       "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "error": false,
-          "span": 12,
-          "editable": true,
-          "type": "bettermap",
-          "loadingEditor": false,
-          "field": "geoip.coordinates",
-          "size": 1000,
-          "spyable": true,
-          "tooltip": "_id",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2
-            ]
-          },
-          "title": "Location"
-        }
-      ],
-      "notice": false
+      "title": "TCP State",
+      "editable": true,
+      "height": "150px",
+      "collapsable": true
     },
     {
       "notice": false,
       "panels": [
         {
-          "status": "Stable",
+          "span": 12,
+          "title": "Location",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2
+            ]
+          },
+          "editable": true,
+          "tooltip": "_id",
+          "field": "geoip.coordinates",
+          "error": false,
+          "spyable": true,
+          "loadingEditor": false,
+          "type": "bettermap",
+          "size": 1000
+        }
+      ],
+      "collapse": false,
+      "title": "Geoip",
+      "editable": true,
+      "height": "350px",
+      "collapsable": true
+    },
+    {
+      "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Events",
+      "editable": true,
+      "height": "650px",
+      "panels": [
+        {
+          "sort": [
+            "_score",
+            "desc"
+          ],
           "header": true,
           "trimFactor": 300,
           "spyable": true,
@@ -741,18 +749,8 @@
           "title": "Documents",
           "pages": 5,
           "type": "table",
-          "sort": [
-            "_score",
-            "desc"
-          ],
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0,
-              1,
-              2
-            ]
-          },
+          "status": "Stable",
+          "error": false,
           "editable": true,
           "offset": 0,
           "group": [
@@ -775,16 +773,18 @@
             "flow_id"
           ],
           "paging": true,
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0,
+              1,
+              2
+            ]
+          },
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Events",
-      "editable": true,
-      "height": "650px",
-      "collapsable": true
+      ]
     }
   ],
   "title": "FLOW",
@@ -800,8 +800,8 @@
     "save_temp_ttl": "30d",
     "load_elasticsearch": true,
     "save_local": true,
-    "save_elasticsearch": true,
     "save_temp_ttl_enable": true,
+    "save_elasticsearch": true,
     "save_gist": false,
     "save_default": true
   },
@@ -810,10 +810,8 @@
       "notice": false,
       "enable": true,
       "collapse": true,
-      "remember": 10,
       "pinned": true,
       "query": "*",
-      "type": "query",
       "history": [
         "event_type:\"flow\" AND flow.state:\"closed\"",
         "event_type:\"flow\" AND flow.state:\"established\"",
@@ -825,7 +823,9 @@
         "event_type:\"flow\" and flow.bytes_toserver",
         "event_type:\"flow\" and flow.pkts_toclient",
         "event_type:\"flow\" and flow.pkts_toserver"
-      ]
+      ],
+      "type": "query",
+      "remember": 10
     },
     {
       "notice": true,
@@ -873,13 +873,13 @@
     "filter": {
       "list": {
         "0": {
-          "type": "time",
-          "field": "@timestamp",
           "from": "now-24h",
           "to": "now",
+          "field": "@timestamp",
+          "alias": "",
           "mandate": "must",
           "active": true,
-          "alias": "",
+          "type": "time",
           "id": 0
         }
       },
@@ -891,7 +891,7 @@
       "list": {
         "0": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#7EB26D",
           "alias": "New flows",
           "query": "event_type:\"flow\" AND flow.state:\"new\"",
@@ -900,7 +900,7 @@
         },
         "1": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#EAB839",
           "alias": "Established flows",
           "query": "event_type:\"flow\" AND flow.state:\"established\"",
@@ -909,7 +909,7 @@
         },
         "2": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#890F02",
           "alias": "Closed flows",
           "query": "event_type:\"flow\" AND flow.state:\"closed\"",

@@ -9,11 +9,16 @@
   "rows": [
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Options",
+      "editable": true,
+      "height": "220px",
       "panels": [
         {
           "show_query": true,
           "bars": true,
-          "interval": "10m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -22,8 +27,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -41,15 +46,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 12,
           "title": "Timechart",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -58,40 +63,40 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": false,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "10m",
+          "lines": false,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
         }
-      ],
-      "collapse": false,
-      "title": "Options",
-      "editable": true,
-      "height": "220px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Graph",
+      "editable": true,
+      "height": "250px",
       "panels": [
         {
           "labels": true,
@@ -112,18 +117,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -145,18 +150,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -178,18 +183,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -211,33 +216,24 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": false,
-      "title": "Graph",
-      "editable": true,
-      "height": "250px",
-      "collapsable": true
+      ]
     },
     {
-      "title": "HTTP servers",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "labels": true,
@@ -258,75 +254,75 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
           "editable": true,
           "chart": "pie",
           "counter_pos": "above",
           "tstat": "total",
           "donut": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "order": "count"
         },
         {
+          "exclude": [],
           "map": "europe",
           "span": 4,
           "title": "HTTP Europe Map",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "editable": true,
           "field": "geoip.country_code2",
           "colors": [
             "#A0E2E2",
             "#265656"
           ],
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
           "spyable": true,
-          "exclude": [],
           "loadingEditor": false,
           "type": "map",
           "size": 167
         },
         {
+          "exclude": [],
           "map": "usa",
           "span": 4,
           "title": "HTTP USA Map",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "editable": true,
           "field": "geoip.country_code2",
           "colors": [
             "#A0E2E2",
             "#265656"
           ],
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
           "spyable": true,
-          "exclude": [],
           "loadingEditor": false,
           "type": "map",
           "size": 167
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "HTTP servers",
+      "editable": true,
+      "height": "250px",
+      "collapsable": true
     },
     {
-      "title": "HTTP headers",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "labels": true,
@@ -347,18 +343,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -380,18 +376,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -413,18 +409,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -446,29 +442,29 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "HTTP headers",
+      "editable": true,
+      "height": "250px",
+      "collapsable": true
     },
     {
-      "title": "HTTP params",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "labels": true,
@@ -489,18 +485,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -522,18 +518,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -546,7 +542,7 @@
           "style": {
             "font-size": "10pt"
           },
-          "span": 4,
+          "span": 3,
           "title": "HTTP Transfer Encoding",
           "tilt": false,
           "arrangement": "horizontal",
@@ -555,29 +551,29 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "HTTP params",
+      "editable": true,
+      "height": "250px",
+      "collapsable": true
     },
     {
-      "title": "HTTP values",
-      "height": "250px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
+      "notice": false,
       "panels": [
         {
           "labels": true,
@@ -598,18 +594,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "pie",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "pie",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -631,18 +627,18 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -664,56 +660,68 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
           "editable": true,
           "chart": "pie",
           "counter_pos": "above",
           "tstat": "total",
           "donut": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "order": "count"
         }
       ],
-      "notice": false
+      "collapse": false,
+      "title": "HTTP values",
+      "editable": true,
+      "height": "250px",
+      "collapsable": true
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Locations",
+      "editable": true,
+      "height": "500px",
       "panels": [
         {
           "span": 12,
           "title": "HTTP World Geoip Src Map",
+          "error": false,
+          "editable": true,
+          "tooltip": "_id",
+          "field": "geoip.coordinates",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ]
           },
-          "editable": true,
-          "tooltip": "_id",
-          "field": "geoip.coordinates",
-          "error": false,
           "spyable": true,
           "loadingEditor": false,
           "type": "bettermap",
           "size": 100000
         }
-      ],
-      "collapse": false,
-      "title": "Locations",
-      "editable": true,
-      "height": "500px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Events",
+      "editable": true,
+      "height": "650px",
       "panels": [
         {
-          "status": "Stable",
+          "sort": [
+            "_score",
+            "desc"
+          ],
           "header": true,
           "trimFactor": 300,
           "spyable": true,
@@ -727,16 +735,8 @@
           "title": "Documents",
           "pages": 5,
           "type": "table",
-          "sort": [
-            "_score",
-            "desc"
-          ],
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ]
-          },
+          "status": "Stable",
+          "error": false,
           "editable": true,
           "offset": 0,
           "group": [
@@ -758,16 +758,16 @@
             "http.http_user_agent"
           ],
           "paging": true,
-          "error": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Events",
-      "editable": true,
-      "height": "650px",
-      "collapsable": true
+      ]
     }
   ],
   "title": "HTTP-Extended-Custom",
@@ -783,8 +783,8 @@
     "save_temp_ttl": "30d",
     "load_elasticsearch": true,
     "save_local": true,
-    "save_elasticsearch": true,
     "save_temp_ttl_enable": true,
+    "save_elasticsearch": true,
     "save_gist": false,
     "save_default": true
   },
@@ -793,13 +793,13 @@
       "notice": false,
       "enable": true,
       "collapse": true,
-      "remember": 10,
       "pinned": true,
       "query": "*",
-      "type": "query",
       "history": [
         "event_type:\"http\""
-      ]
+      ],
+      "type": "query",
+      "remember": 10
     },
     {
       "notice": true,
@@ -847,13 +847,13 @@
     "filter": {
       "list": {
         "0": {
-          "type": "time",
-          "field": "@timestamp",
           "from": "now-24h",
           "to": "now",
+          "field": "@timestamp",
+          "alias": "",
           "mandate": "must",
           "active": true,
-          "alias": "",
+          "type": "time",
           "id": 0
         }
       },
@@ -865,7 +865,7 @@
       "list": {
         "0": {
           "enable": true,
-          "pin": false,
+          "pin": true,
           "color": "#7EB26D",
           "alias": "HTTP",
           "query": "event_type:\"http\"",

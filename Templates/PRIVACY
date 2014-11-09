@@ -9,11 +9,16 @@
   "rows": [
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Options",
+      "editable": true,
+      "height": "220px",
       "panels": [
         {
           "show_query": true,
           "bars": true,
-          "interval": "10m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -22,8 +27,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -41,15 +46,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 12,
           "title": "Timechart",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -58,21 +63,6 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": false,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "all",
             "ids": [
@@ -89,19 +79,34 @@
               10
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "10m",
+          "lines": false,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
         }
-      ],
-      "collapse": false,
-      "title": "Options",
-      "editable": true,
-      "height": "220px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Data collectors",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "labels": true,
@@ -120,22 +125,22 @@
           "tilt": false,
           "arrangement": "horizontal",
           "field": "http.http_refer.raw",
-          "other": true,
+          "other": false,
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
               1
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -153,22 +158,22 @@
           "tilt": false,
           "arrangement": "horizontal",
           "field": "http.http_refer.raw",
-          "other": true,
+          "other": false,
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
               4
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -188,22 +193,22 @@
           "tilt": false,
           "arrangement": "horizontal",
           "field": "http.http_refer.raw",
-          "other": true,
+          "other": false,
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
               3
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -221,33 +226,33 @@
           "tilt": false,
           "arrangement": "horizontal",
           "field": "http.http_refer.raw",
-          "other": true,
+          "other": false,
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
               2
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": false,
-      "title": "Data collectors",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": true,
+      "title": "Advertising",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "labels": true,
@@ -264,33 +269,33 @@
           "tilt": false,
           "arrangement": "horizontal",
           "field": "http.http_refer.raw",
-          "other": true,
+          "other": false,
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
               10
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": true,
-      "title": "Advertising",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Coookies & Co",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "labels": true,
@@ -311,12 +316,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -333,6 +332,12 @@
               10
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -354,12 +359,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -376,22 +375,28 @@
               10
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": false,
-      "title": "Coookies & Co",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "TLS",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
           "show_query": true,
           "bars": true,
-          "interval": "10m",
+          "y-axis": true,
           "zoomlinks": true,
           "annotate": {
             "sort": [
@@ -400,8 +405,8 @@
             ],
             "query": "*",
             "enable": false,
-            "field": "_type",
-            "size": 20
+            "size": 20,
+            "field": "_type"
           },
           "intervals": [
             "auto",
@@ -419,15 +424,15 @@
           ],
           "timezone": "browser",
           "spyable": true,
+          "stack": true,
           "linewidth": 3,
-          "percentage": false,
           "fill": 0,
           "scale": 1,
           "span": 6,
           "title": "TLS",
           "tooltip": {
-            "query_as_alias": true,
-            "value_type": "cumulative"
+            "value_type": "cumulative",
+            "query_as_alias": true
           },
           "legend": true,
           "derivative": false,
@@ -436,21 +441,6 @@
           "type": "histogram",
           "value_field": null,
           "x-axis": true,
-          "pointradius": 5,
-          "editable": true,
-          "zerofill": true,
-          "grid": {
-            "max": null,
-            "min": 0
-          },
-          "stack": true,
-          "legend_counts": true,
-          "time_field": "@timestamp",
-          "y-axis": true,
-          "lines": false,
-          "y_format": "none",
-          "points": false,
-          "mode": "count",
           "queries": {
             "mode": "selected",
             "ids": [
@@ -460,6 +450,21 @@
               9
             ]
           },
+          "editable": true,
+          "zerofill": true,
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "percentage": false,
+          "legend_counts": true,
+          "time_field": "@timestamp",
+          "interval": "10m",
+          "lines": false,
+          "y_format": "none",
+          "points": false,
+          "mode": "count",
+          "pointradius": 5,
           "resolution": 100,
           "options": true,
           "interactive": true
@@ -483,12 +488,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "bar",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "selected",
             "ids": [
@@ -496,17 +495,23 @@
               7
             ]
           },
+          "editable": true,
+          "chart": "bar",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": false,
-      "title": "TLS",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": true,
+      "title": "Graph",
+      "editable": true,
+      "height": "250px",
       "panels": [
         {
           "labels": true,
@@ -527,12 +532,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -540,9 +539,21 @@
               1,
               2,
               3,
-              4
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -564,12 +575,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -577,9 +582,21 @@
               1,
               2,
               3,
-              4
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         },
         {
@@ -601,12 +618,6 @@
           "loadingEditor": false,
           "type": "terms",
           "missing": false,
-          "error": false,
-          "editable": true,
-          "chart": "table",
-          "counter_pos": "above",
-          "tstat": "total",
-          "donut": false,
           "queries": {
             "mode": "all",
             "ids": [
@@ -614,103 +625,119 @@
               1,
               2,
               3,
-              4
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
             ]
           },
+          "editable": true,
+          "chart": "table",
+          "counter_pos": "above",
+          "tstat": "total",
+          "donut": false,
+          "error": false,
           "order": "count"
         }
-      ],
-      "collapse": true,
-      "title": "Graph",
-      "editable": true,
-      "height": "250px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Countries",
+      "editable": true,
+      "height": "150px",
       "panels": [
         {
+          "exclude": [],
           "map": "world",
           "span": 4,
           "title": "HTTPS Map",
+          "error": false,
+          "editable": true,
+          "field": "geoip.country_code2",
+          "colors": [
+            "#A0E2E2",
+            "#265656"
+          ],
           "queries": {
             "mode": "selected",
             "ids": [
               5
             ]
           },
-          "editable": true,
-          "field": "geoip.country_code2",
-          "colors": [
-            "#A0E2E2",
-            "#265656"
-          ],
-          "error": false,
           "spyable": true,
-          "exclude": [],
           "loadingEditor": false,
           "type": "map",
           "size": 167
         },
         {
+          "exclude": [],
           "map": "world",
           "span": 4,
           "title": "HTTP World Map",
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "editable": true,
           "field": "geoip.country_code2",
           "colors": [
             "#A0E2E2",
             "#265656"
           ],
-          "error": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
           "spyable": true,
-          "exclude": [],
           "loadingEditor": false,
           "type": "map",
           "size": 167
         },
         {
+          "exclude": [],
           "map": "usa",
           "span": 4,
           "title": "HTTP USA Map",
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0
-            ]
-          },
+          "error": false,
           "editable": true,
           "field": "geoip.country_code2",
           "colors": [
             "#A0E2E2",
             "#265656"
           ],
-          "error": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0
+            ]
+          },
           "spyable": true,
-          "exclude": [],
           "loadingEditor": false,
           "type": "map",
           "size": 167
         }
-      ],
-      "collapse": false,
-      "title": "Countries",
-      "editable": true,
-      "height": "150px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Locations",
+      "editable": true,
+      "height": "500px",
       "panels": [
         {
           "span": 12,
           "title": "HTTP World Geoip Src Map",
+          "error": false,
+          "editable": true,
+          "tooltip": "_id",
+          "field": "geoip.coordinates",
           "queries": {
             "mode": "selected",
             "ids": [
@@ -718,27 +745,26 @@
               5
             ]
           },
-          "editable": true,
-          "tooltip": "_id",
-          "field": "geoip.coordinates",
-          "error": false,
           "spyable": true,
           "loadingEditor": false,
           "type": "bettermap",
           "size": 100000
         }
-      ],
-      "collapse": false,
-      "title": "Locations",
-      "editable": true,
-      "height": "500px",
-      "collapsable": true
+      ]
     },
     {
       "notice": false,
+      "collapsable": true,
+      "collapse": false,
+      "title": "Events",
+      "editable": true,
+      "height": "650px",
       "panels": [
         {
-          "status": "Stable",
+          "sort": [
+            "_score",
+            "desc"
+          ],
           "header": true,
           "trimFactor": 300,
           "spyable": true,
@@ -752,17 +778,8 @@
           "title": "Documents",
           "pages": 5,
           "type": "table",
-          "sort": [
-            "_score",
-            "desc"
-          ],
-          "queries": {
-            "mode": "selected",
-            "ids": [
-              0,
-              5
-            ]
-          },
+          "status": "Stable",
+          "error": false,
           "editable": true,
           "offset": 0,
           "group": [
@@ -784,19 +801,20 @@
             "http.url"
           ],
           "paging": true,
-          "error": false,
+          "queries": {
+            "mode": "selected",
+            "ids": [
+              0,
+              5
+            ]
+          },
           "timeField": "@timestamp",
           "highlight": []
         }
-      ],
-      "collapse": false,
-      "title": "Events",
-      "editable": true,
-      "height": "650px",
-      "collapsable": true
+      ]
     }
   ],
-  "title": "Privacy",
+  "title": "PRIVACY",
   "failover": false,
   "editable": true,
   "refresh": false,
@@ -809,8 +827,8 @@
     "save_temp_ttl": "30d",
     "load_elasticsearch": true,
     "save_local": true,
-    "save_elasticsearch": true,
     "save_temp_ttl_enable": true,
+    "save_elasticsearch": true,
     "save_gist": false,
     "save_default": true
   },
@@ -819,10 +837,8 @@
       "notice": false,
       "enable": true,
       "collapse": true,
-      "remember": 10,
       "pinned": true,
       "query": "*",
-      "type": "query",
       "history": [
         "http.hostname:*doubleclick.net*",
         "tls.subject.raw:*doubleclick*",
@@ -834,7 +850,9 @@
         "http.hostname:xiti.com",
         "http.hostname:www.google-analytics.com",
         "http.hostname:*.facebook.net"
-      ]
+      ],
+      "type": "query",
+      "remember": 10
     },
     {
       "notice": true,
@@ -882,13 +900,13 @@
     "filter": {
       "list": {
         "0": {
-          "type": "time",
-          "field": "@timestamp",
           "from": "now-24h",
           "to": "now",
+          "field": "@timestamp",
+          "alias": "",
           "mandate": "must",
           "active": true,
-          "alias": "",
+          "type": "time",
           "id": 0
         },
         "1": {
