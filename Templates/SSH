@@ -230,7 +230,7 @@
             ]
           },
           "editable": true,
-          "field": "geoip.country_code2",
+          "field": "geoip.region_name.raw",
           "colors": [
             "#A0E2E2",
             "#265656"
