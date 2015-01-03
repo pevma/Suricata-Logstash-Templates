@@ -58,5 +58,7 @@ In order to use the VLAN template, make sure you have enabled vlan tracking in s
      vlan:
        use-for-tracking: true
 
+NOTE:  
+For best user experience use with 1680 x 1050 screen resolution!!  
 
 Do not hesitate to contribute !
