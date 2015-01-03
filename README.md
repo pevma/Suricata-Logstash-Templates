@@ -53,7 +53,7 @@ In order to use the HTTP-Extended-Custom template you need to set up Suricata as
 explained here - http://www.pevma.blogspot.se/2014/06/http-header-fields-extended-logging.html  
 
 NOTE:  
-In order to use the VLAN template, make sure you have enabled vlan tracking in suricata.yaml -
+If the traffic you are inspecting contains vlans - in order to use the VLAN template, make sure you have enabled vlan tracking in suricata.yaml -
 
      vlan:
        use-for-tracking: true
