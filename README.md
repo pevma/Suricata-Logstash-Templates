@@ -48,17 +48,17 @@ That will create a directory - Suricata-Logstash-Templates - holding the templat
  - Right upper corner, Load -> Advanced -> Browse
  - Load the desired template(s)
 
-NOTE:  
+**NOTE:**  
 In order to use the HTTP-Extended-Custom template you need to set up Suricata as
 explained here - http://www.pevma.blogspot.se/2014/06/http-header-fields-extended-logging.html  
 
-NOTE:  
+**NOTE:**  
 If the traffic you are inspecting contains vlans - in order to use the VLAN template, make sure you have enabled vlan tracking in suricata.yaml -
 
      vlan:
        use-for-tracking: true
 
-NOTE:  
+**NOTE:**  
 For best user experience use with 1680 x 1050 screen resolution!!  
 
 Do not hesitate to contribute !
