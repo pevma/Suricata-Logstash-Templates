@@ -1,7 +1,7 @@
 Suricata-Logstash-Templates
 ===========================
 
-Templates/Dashboards for Kibana to use with Suricata IDPS
+Templates/Dashboards for Kibana 3 to use with Suricata IDPS
 
 
 This repository provides 12 templates for the Kibana interface of Logstash
