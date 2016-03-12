@@ -1,8 +1,10 @@
 Suricata-Logstash-Templates
 ===========================
 
-Templates/Dashboards for Kibana 3 to use with Suricata IDPS
+These templates/dashboards are for Kibana 3 to use with Suricata IDPS
 
+For Kibana 4,Elasticsearch 2.x and Suricata IDPS you can use those templates here - 
+https://github.com/StamusNetworks/KTS
 
 This repository provides 12 templates for the Kibana interface of Logstash
 for use with Suricata IDS/IPS - Intrusion Detection and Prevention System.
